@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS registration;
+CREATE DATABASE IF NOT EXISTS sangrilamalangwakathmandu;
+CREATE DATABASE IF NOT EXISTS allbooking;

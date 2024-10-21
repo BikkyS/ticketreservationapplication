@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 # ticketreservationapplication
-just clone and use docker to run 
+=======
+# Ticket-Reservation-Application
+Fully Functional Application
+>>>>>>> 6d7dfcb (Initial commit)

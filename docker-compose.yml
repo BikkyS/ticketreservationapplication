@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    image: bikkys1/ticketreservationapp:latest
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+      - ./custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini
+    depends_on:
+      - db
+    networks:
+      - mynetwork
+
+  db:
+    image: mariadb:10.5
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./create_databases.sql:/docker-entrypoint-initdb.d/create_databases.sql
+      - ./create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    networks:
+      - mynetwork
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+    ports:
+      - "8081:80"
+    volumes:
+      - ./config.inc.php:/etc/phpmyadmin/config.inc.php
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: example
+    networks:
+      - mynetwork
+
+volumes:
+  db_data:
+
+networks:
+  mynetwork:
