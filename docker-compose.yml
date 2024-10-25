@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   web:
-    build: .
     image: bikkys1/ticketreservationapp:latest
     ports:
       - "80:80"
@@ -40,6 +39,9 @@ services:
       PMA_PASSWORD: example
     networks:
       - mynetwork
+    command: >
+      sh -c "chmod 644 /etc/phpmyadmin/config.inc.php &&
+      apache2-foreground"
 
 volumes:
   db_data:
