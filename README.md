@@ -1,6 +1,6 @@
 # My Project
 
-This is a simple project that uses Docker.
+This is a project that uses Docker.So Just install docker it is good to go.
 
 ## Prerequisites
 - Docker installed on your machine. You can download it from [here](https://www.docker.com/get-started).
