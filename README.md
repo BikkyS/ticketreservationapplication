@@ -16,7 +16,7 @@ docker build -t my-project-image .
 docker run -d -p 8080:8080 --name my-project-container my-project-image
 Access the Application
 The application should now be running and accessible at http://localhost:8080.
-
+NOTE: please sign up with number 9815842010 which is made available for admin persons and doesnot include any payment gateway. Thanks for trying out my project.
 
 
 
